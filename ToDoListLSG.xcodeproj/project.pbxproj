@@ -14,6 +14,7 @@
 		0D7BDB9B223AA8E6000D3242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7BDB99223AA8E6000D3242 /* LaunchScreen.storyboard */; };
 		0D7BDBA4223AAFA3000D3242 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7BDBA3223AAFA3000D3242 /* ToDoItem.swift */; };
 		0D7BDBA6223AB1DC000D3242 /* ToDoItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7BDBA5223AB1DC000D3242 /* ToDoItemsManager.swift */; };
+		0D7BDBA8223AB76A000D3242 /* ToDoListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7BDBA7223AB76A000D3242 /* ToDoListTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0D7BDB9C223AA8E6000D3242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D7BDBA3223AAFA3000D3242 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		0D7BDBA5223AB1DC000D3242 /* ToDoItemsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemsManager.swift; sourceTree = "<group>"; };
+		0D7BDBA7223AB76A000D3242 /* ToDoListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				0D7BDBA3223AAFA3000D3242 /* ToDoItem.swift */,
 				0D7BDBA5223AB1DC000D3242 /* ToDoItemsManager.swift */,
 				0D7BDB92223AA8E5000D3242 /* ViewController.swift */,
+				0D7BDBA7223AB76A000D3242 /* ToDoListTableTableViewController.swift */,
 				0D7BDB94223AA8E5000D3242 /* Main.storyboard */,
 				0D7BDB99223AA8E6000D3242 /* LaunchScreen.storyboard */,
 				0D7BDB9C223AA8E6000D3242 /* Info.plist */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D7BDBA6223AB1DC000D3242 /* ToDoItemsManager.swift in Sources */,
+				0D7BDBA8223AB76A000D3242 /* ToDoListTableTableViewController.swift in Sources */,
 				0D7BDB93223AA8E5000D3242 /* ViewController.swift in Sources */,
 				0D7BDB91223AA8E5000D3242 /* AppDelegate.swift in Sources */,
 				0D7BDBA4223AAFA3000D3242 /* ToDoItem.swift in Sources */,

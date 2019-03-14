@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ToDoItemManager {
+class ToDoItemsManager {
     
     var items:[ToDoItem]=[ToDoItem]()
     
