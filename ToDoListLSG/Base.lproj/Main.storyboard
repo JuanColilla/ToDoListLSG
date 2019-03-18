@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,6 +57,39 @@
             </objects>
             <point key="canvasLocation" x="295.19999999999999" y="133.5832083958021"/>
         </scene>
+        <!--New Item-->
+        <scene sceneID="Hyv-oU-ahb">
+            <objects>
+                <viewController id="gJD-qo-zeN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSa-Aw-3dg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new item." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIB-h9-0VZ">
+                                <rect key="frame" x="16" y="318.5" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iIB-h9-0VZ" firstAttribute="leading" secondItem="We5-Wd-ulj" secondAttribute="leading" constant="16" id="0fq-zb-nQN"/>
+                            <constraint firstItem="iIB-h9-0VZ" firstAttribute="centerX" secondItem="dSa-Aw-3dg" secondAttribute="centerX" id="4d7-Vg-a0c"/>
+                            <constraint firstItem="iIB-h9-0VZ" firstAttribute="centerY" secondItem="dSa-Aw-3dg" secondAttribute="centerY" id="lFe-6X-xZ6"/>
+                            <constraint firstItem="We5-Wd-ulj" firstAttribute="trailing" secondItem="iIB-h9-0VZ" secondAttribute="trailing" constant="16" id="t74-Gd-VlX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="We5-Wd-ulj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Item" id="cpR-8k-9LS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ydf-dh-ywW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hC4-IP-PDD"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epi-wd-q50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="134"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="n84-s7-Ds5">
             <objects>
@@ -73,6 +107,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EeH-L7-6xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-644" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ADc-P9-dd1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bmy-o6-fhF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7qf-Zk-348">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gJD-qo-zeN" kind="relationship" relationship="rootViewController" id="NCD-a9-FeI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIM-6C-If6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="134"/>
         </scene>
     </scenes>
 </document>

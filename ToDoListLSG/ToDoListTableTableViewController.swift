@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoListTableTableViewController: UITableViewController {
     
-    var toDoItemsManager = ToDoItemsManager()
+    var toDoItemsManager: ToDoItemsManager = ToDoItemsManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,6 @@ class ToDoListTableTableViewController: UITableViewController {
         return toDoItemsManager.items.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
         
@@ -40,12 +39,10 @@ class ToDoListTableTableViewController: UITableViewController {
         // Actualizar el titulo de la celda.
         cell.textLabel?.text = item.name
         
-        
         // Actualizar el subtítulo de la celda.
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         cell.detailTextLabel?.text = dateFormatter.string(from: item.creationDate)
-        
         
         // Actualizar accesorio de la celda.
         if item.completed{
@@ -54,12 +51,9 @@ class ToDoListTableTableViewController: UITableViewController {
             cell.accessoryType = UITableViewCell.AccessoryType.none
         }
         
-        
         return cell
         
-        
     }
-    
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -67,9 +61,16 @@ class ToDoListTableTableViewController: UITableViewController {
         if editingStyle == .delete {
             toDoItemsManager.deleteItem(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-    }
+        }
         
-}
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: <#T##IndexPath#>, animated: false)
+        toDoItemsManager.markItemAsCompleted(itemIndex: indexPath.row)
+        tableView.reloadData()
+    }
+    
     
     
     
