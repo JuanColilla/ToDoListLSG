@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" textLabel="Qnv-gl-0rp" detailTextLabel="mE0-27-EfF" style="IBUITableViewCellStyleSubtitle" id="Xsk-gQ-0JU" userLabel="ListCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="ListCell" textLabel="Qnv-gl-0rp" detailTextLabel="mE0-27-EfF" style="IBUITableViewCellStyleSubtitle" id="Xsk-gQ-0JU" userLabel="ListCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xsk-gQ-0JU" id="Wfo-qc-JsL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qnv-gl-0rp">
@@ -50,7 +50,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do List" id="nR7-m2-lAv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kia-Sf-lIl"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kia-Sf-lIl">
+                            <connections>
+                                <segue destination="bmy-o6-fhF" kind="presentation" id="VDt-ax-59x"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggm-sQ-UfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,7 +64,7 @@
         <!--New Item-->
         <scene sceneID="Hyv-oU-ahb">
             <objects>
-                <viewController id="gJD-qo-zeN" sceneMemberID="viewController">
+                <viewController id="gJD-qo-zeN" customClass="AddToDoViewController" customModule="ToDoListLSG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSa-Aw-3dg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,11 +86,23 @@
                         <viewLayoutGuide key="safeArea" id="We5-Wd-ulj"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Item" id="cpR-8k-9LS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ydf-dh-ywW"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hC4-IP-PDD"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ydf-dh-ywW">
+                            <connections>
+                                <segue destination="Rim-OA-i1C" kind="unwind" identifier="Cancel Segue" unwindAction="goBackWithSegue:" id="xO4-2Q-QeP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hC4-IP-PDD">
+                            <connections>
+                                <segue destination="Rim-OA-i1C" kind="unwind" identifier="Save Segue" unwindAction="goBackWithSegue:" id="mHa-Ce-bo7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newItemTextField" destination="iIB-h9-0VZ" id="kTf-6i-ugc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epi-wd-q50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rim-OA-i1C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2369" y="134"/>
         </scene>

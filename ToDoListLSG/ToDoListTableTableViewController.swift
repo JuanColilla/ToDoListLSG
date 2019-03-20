@@ -12,9 +12,20 @@ class ToDoListTableTableViewController: UITableViewController {
     
     var toDoItemsManager: ToDoItemsManager = ToDoItemsManager()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    var newItem: ToDoItem?
+    
+    @IBAction func goBack(segue: UIStoryboardSegue) {
+        if let aNewItem = newItem{
+            
+            //update var newItem to nil for future add actions:
+            self.newItem = nil
+            
+            //update the model data source:
+            toDoItemsManager.addItems(aNewItem)
+            
+            //update the view:
+            tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -66,10 +77,12 @@ class ToDoListTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: <#T##IndexPath#>, animated: false)
+        tableView.deselectRow(at: indexPath, animated: false)
         toDoItemsManager.markItemAsCompleted(itemIndex: indexPath.row)
         tableView.reloadData()
     }
+    
+    
     
     
     

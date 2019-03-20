@@ -12,7 +12,7 @@ class ToDoItemsManager {
     
     var items:[ToDoItem]=[ToDoItem]()
     
-    func addItems(item: ToDoItem){
+    func addItems(_ item: ToDoItem){
         self.items.append(item)
     }
  
