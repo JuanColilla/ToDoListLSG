@@ -76,6 +76,7 @@ class ToDoListTableTableViewController: UITableViewController {
         
     }
     
+    // to support mark cell as completed.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         toDoItemsManager.markItemAsCompleted(itemIndex: indexPath.row)
